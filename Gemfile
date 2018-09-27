@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'eventmachine'
+gem 'rubocop'
 
 
 group :test do

@@ -1,0 +1,17 @@
+<h2><%= @team.name %></h2>
+
+<h4>Current Players:</h4>
+
+<% @team.players.each do |player| %>
+<%= player.name %><br>
+<% end %>
+
+
+ <br>
+Find Players: <a href="/teams/<%= @team.id %>/players"><input type="submit" id="submit" value="Enter"></a>
+  <br></br>
+
+  <a href="/home">Team Homepage</a>
+  <br>
+  <a href="/teams/new">Create New Team</a>
+  <br>

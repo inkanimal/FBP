@@ -1,0 +1,18 @@
+players
+<form method="POST" action="/teams/<%= @team.id %>">
+ <input id="hidden" type="hidden" name="_method" value="patch">
+<h2><%=@team.name%></h2>
+
+<h4>Players:</h4><br>
+
+  <%Player.all.each do |player| %>
+  <input type="checkbox" name="team[player_ids][]" value="<%= player.id %>" id="player_<%= player.id %>"
+  <%='checked' if @team.players.include?(player) %>>
+ <%= player.name %> | Position: <%=player.position%>
+<br></br>
+<%end%>
+  <br></br>
+
+
+<a href="/teams/<%= @team.id %>"><input type="submit" id="submit" value="Draft Player"></a>
+</form>
